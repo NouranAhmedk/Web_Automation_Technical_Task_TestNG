@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suit">
+    <listeners>
+        <listener class-name="listeners.ITestListener_Listener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="E:/Testing/Projects/Web_Automation_Technical_Task_TestNG">
+        <groups>
+            <run>
+                <include name="Regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.registration.Registration_Test"/>
+            <class name="tests.login.Login_Test"/>
+            <class name="tests.add_product_from_accessories_to_shopping_cart.Add_Product_From_Accessories_To_Shopping_Cart_Test"/>
+        </classes>
+    </test>
+</suite>

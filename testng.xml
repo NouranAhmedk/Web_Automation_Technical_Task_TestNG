@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="listeners.ITestListener_Listener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="E:/Testing/Projects/Web_Automation_Technical_Task_TestNG">
+        <classes>
+            <class name="tests.registration.Registration_Test">
+                <methods>
+                    <include name="registration_With_Valid_Data"/>
+                    <include name="registration_With_Invalid_Data"/>
+                    <include name="registration_With_Invalid_Password_Length"/>
+                </methods>
+            </class>
+            <class name="tests.login.Login_Test">
+                <methods>
+                    <include name="login_With_Valid_Data"/>
+                    <include name="login_With_Invalid_Data"/>
+                </methods>
+            </class>
+            <class name="tests.add_product_from_accessories_to_shopping_cart.Add_Product_From_Accessories_To_Shopping_Cart_Test">
+                <methods>
+                    <include name="add_Product_From_Accessories_To_Shopping_Cart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
