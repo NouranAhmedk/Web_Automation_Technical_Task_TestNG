@@ -2,8 +2,11 @@ package web_pages.shoes_page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import web_pages.Page_Base;
+
+import java.util.List;
 
 public class Shoes_WebElements extends Page_Base {
 
@@ -26,5 +29,15 @@ public class Shoes_WebElements extends Page_Base {
 
     @FindBy(css = "a[href='https://ecommerce.tealiumdemo.com/accessories/shoes/hana-flat-charcoal-557.html']")
     WebElement hana_Shoes_Details_Page;
+
+    @FindAll({
+            @FindBy(xpath = "//span[@id='product-price-432']/span"),
+            @FindBy(xpath = "//span[@id='product-price-435']/span"),
+            @FindBy(xpath = "//span[@id='product-price-434']/span"),
+            @FindBy(xpath = "//span[@id='product-price-430']/span"),
+            @FindBy(xpath = "//span[@id='product-price-433']/span"),
+            @FindBy(xpath = "//span[@id='product-price-431']/span"),
+    })
+   List<WebElement> asc_Elements;
 
 }

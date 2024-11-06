@@ -29,4 +29,7 @@ public class Dashboard_WebElements extends Page_Base {
 
     @FindBy(xpath = "//span[text()='Thank you for registering with Tealium Ecommerce.']")
     WebElement registration_Success_Msg;
+
+    @FindBy(css = "a[href='https://ecommerce.tealiumdemo.com/customer/account/logout/']")
+    WebElement logout_Li;
 }

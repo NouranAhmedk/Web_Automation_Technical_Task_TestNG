@@ -11,6 +11,8 @@
 
     import java.io.File;
     import java.time.Duration;
+    import java.util.List;
+    import java.util.stream.Collectors;
 
     /**
      * @author Nouran_Ahmed
@@ -46,9 +48,9 @@
          */
         protected void clickWebElement(WebElement ele) {
             try {
-                wait_Element_Visibility(15, ele);
+                wait_Element_Visibility(20, ele);
             } catch (Exception e) {
-                wait_Invisible_Element(2, ele);
+                wait_Invisible_Element(5, ele);
                 System.out.println(ele.getAccessibleName() + ": is invisible ");
             }
             scrollTo_Highlight(ele, "green");
@@ -197,11 +199,60 @@
         @SneakyThrows
         protected void assert_Redirection_To_Correct_Page(String expected_Result, String assertion_Message)
         {
-            Thread.sleep(500);
+            Thread.sleep(5000);
             String actual_Result = driver.getCurrentUrl();
             Assert.assertEquals(actual_Result,expected_Result,assertion_Message);
         }
 
+        /**
+         * <p>{@code assert_Ascending_Order_For_Items_C() } function</p>
+         * <p> Streams here act as an iterator so it iterates in the list</p>
+         * <p> Map: The main purpose of {@code map} is it takes something and makes it something else </p>
+         * <p> Lambda function which the purpose is to convert string to double and trim any spaces </p>
+         * <p> {@code element -> Double.parseDouble(element.getText().replace("$", "").trim()) } </p>
+         * so after applying the previous snippet of code it convert for example ["$20.0","$10.0","$25.0"] -> [20.0,10.0,25.0]
+         * and we use collect to collect the items in the list
+         * <pre>{@code
+         *     List<Double> items = ele.stream().map(element -> Double.parseDouble(
+         *                          element.getText().replace("$", "").trim()))
+         *                          .collect(Collectors.toList());
+         *
+         * }</pre>
+         * */
+
+
+        protected void assert_Ascending_Order_For_Items_C(List<WebElement> ele, String assertion_Message){
+            List<Double> items = ele.stream().map(element -> Double.parseDouble(
+                    element.getText().replace("$", "").trim()))
+                    .collect(Collectors.toList());
+
+            for (int i = 0; i < items.size() - 1; i++) {
+                double currentItem = items.get(i);
+                double nextItem = items.get(i + 1);
+                System.out.println("Comparing: " + currentItem + " <= " + nextItem);
+                Assert.assertTrue(currentItem <=  nextItem,
+                        assertion_Message + " where " + ": " + currentItem+ " is not <= " + nextItem);
+            }
+        }
+
+        /**
+         * <p> {@code assert_Ascending_Order_For_Items_E() } function
+         * in which it concerns about {@code currentValue} and {@code nextValue}
+         * where we convert string, for example, "$20.0" to double and remove $ sign and trim any additional spaces 20.0
+         * */
+
+        protected void assert_Ascending_Order_For_Items_E(List<WebElement> ele, String assertion_Message) {
+            for (int i = 0; i < ele.size() - 1; i++) {
+                double currentValue = Double.parseDouble(ele.get(i).getText().replace("$", "").trim());
+                double nextValue = Double.parseDouble(ele.get(i + 1).getText().replace("$", "").trim());
+
+                System.out.println("Comparing: " + currentValue + " <= " + nextValue);
+
+                Assert.assertTrue(currentValue <= nextValue,
+                        String.format("%s: Comparing %.2f is not <= %.2f", assertion_Message, currentValue, nextValue));
+            }
+            Assert.assertTrue(true, "All elements are in ascending order.");
+        }
         /*****************************************SCREENSHOTS_INTERFACE***********************************************/
         /**
          * <p>This method is designed to capture a screenshot of the current state of a web page [Pass/Fail]

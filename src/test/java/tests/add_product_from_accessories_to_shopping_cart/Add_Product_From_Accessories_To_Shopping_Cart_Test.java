@@ -18,7 +18,7 @@ public class Add_Product_From_Accessories_To_Shopping_Cart_Test extends Add_Prod
     /************************************OBJECTS_DECLARATIONS/INSTANTIATIONS*******************************************/
     private Home_Actions ha;
     private Login_Actions la;
-    private Dashboard_Actions db;
+    private Dashboard_Actions da;
     private Shoes_Actions sa;
     private Hana_Flat_Shoes_Details_Actions hfsda;
 
@@ -36,7 +36,7 @@ public class Add_Product_From_Accessories_To_Shopping_Cart_Test extends Add_Prod
 
         ha = new Home_Actions(driver);
         la = new Login_Actions(driver);
-        db = new Dashboard_Actions(driver);
+        da = new Dashboard_Actions(driver);
         sa = new Shoes_Actions(driver);
         hfsda = new Hana_Flat_Shoes_Details_Actions(driver);
         ITestListener_Listener.driver = driver;
@@ -46,13 +46,14 @@ public class Add_Product_From_Accessories_To_Shopping_Cart_Test extends Add_Prod
         la.enter_Email(email_address);
         la.enter_Password(password);
         la.click_Login_btn();
-        db.validate_Correct_Redirect_Dashboard(dashboard_URL);
-        db.validate_Successful_Login();
-        db.hover_On_Accessories_DDl();
-        db.click_Shoes_Li();
+        da.validate_Correct_Redirect_Dashboard(dashboard_URL);
+        da.validate_Successful_Login();
+        da.hover_On_Accessories_DDl();
+        da.click_Shoes_Li();
         sa.click_Sort_By_DDL();
         sa.select_Price_Option();
-        sa.click_Hana_Flat_Shoes_details_page();
+        sa.assert_Ascending_Order_Price();
+        sa.click_Hana_Flat_Shoes_Details_Page();
         hfsda.choose_Shoe_Color();
         hfsda.select_Shoe_Size();
         hfsda.click_Add_To_Card();

@@ -22,6 +22,12 @@ public class Dashboard_Actions extends Dashboard_WebElements {
         clickWebElement(shoes_Li);
     }
 
+    @Step("Clicks \"Logout\" list item")
+    public void click_Logout_Li()
+    {
+        clickWebElement(logout_Li);
+    }
+
     /******************************************ASSERTIONS*********************************************/
     public void validate_Successful_Login() {
         assert_WebElement_Is_Displayed(my_dashboard_header,
@@ -35,5 +41,17 @@ public class Dashboard_Actions extends Dashboard_WebElements {
 
     public void validate_Correct_Redirect_Dashboard(String expected_URL) {
         assert_Redirection_To_Correct_Page(expected_URL, "The correct redirect to dashboard page validation");
+
     }
+
+    public void validate_Correct_Redirect_Logout(String expected_URL) {
+        assert_Redirection_To_Correct_Page(expected_URL,
+                "The correct redirect to Logout page validation");
+    }
+
+    public void validate_Correct_Redirect_Home(String expected_URL) {
+        assert_Redirection_To_Correct_Page(expected_URL,
+                "The correct redirect to home page validation");
+    }
+
 }

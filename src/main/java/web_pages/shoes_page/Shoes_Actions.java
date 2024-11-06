@@ -21,8 +21,14 @@ public class Shoes_Actions extends Shoes_WebElements {
     }
 
     @Step("Clicks Hana Flat shoes details page")
-    public void click_Hana_Flat_Shoes_details_page(){
+    public void click_Hana_Flat_Shoes_Details_Page(){
         clickWebElement(hana_Shoes_Details_Page);
     }
 
+    /******************************************ASSERTIONS*********************************************/
+    public void assert_Ascending_Order_Price() {
+        assert_Ascending_Order_For_Items_E(asc_Elements, "Invalid Ascending order");
+//        assert_Ascending_Order_For_Items_C(asc_Elements, "Invalid Ascending order");
+
+    }
 }
