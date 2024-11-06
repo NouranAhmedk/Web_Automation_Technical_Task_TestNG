@@ -45,7 +45,7 @@
 </build>
 ```
 > [!TIP]
-> **The main reasons for choosing thoes dependencies:**
+> **The main reasons for choosing those dependencies:**
 > 1. ***Apache Commons IO*** : utility classes and methods for handling input/output (IO) in Java. For more detailed information, press this [Link](https://commons.apache.org/proper/commons-io/).
 > 2. ***Lombok*** : Its ability to simplify code writing by using annotations such as ```@SneakyThrows```to boldly throw checked exceptions where no one has thrown them before. For more detailed information, press this [Link](https://projectlombok.org/features/).
 > 3. ***Java Faker*** : It's useful when you're developing a new project and need some pretty data for showcase. For more detailed information, press this [Link](https://github.com/DiUS/java-faker).
@@ -120,7 +120,7 @@
 ### 1. You need to install Allure on your device
 #### Windows    
 + I used **Scoop** to install **Allure**
-    - Incase you don't have **Scoop** in your device you can download **Scoop** by Open a PowerShell terminal (version 5.1 or later) and run
+    - In case you don't have **Scoop** on your device, you can download **Scoop** by Open a PowerShell terminal (version 5.1 or later) and run
     ```
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
@@ -137,7 +137,7 @@
        ```
        allure --version
        ```
-      for more details about installation of Allure you can visit this link [link](https://allurereport.org/docs/install-for-windows/)    
+      for more details about the installation of Allure, you can visit this [link](https://allurereport.org/docs/install-for-windows/)    
 ### 2. Generate a single HTML page Allure report 
  + Open the IntelliJ IDE and run this command in the project terminal
 ```
