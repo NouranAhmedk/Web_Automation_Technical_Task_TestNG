@@ -114,7 +114,7 @@
     target
     pom.xml
     regression_testng.xml
-    testng.xml
+    smoke_testng.xml
 ```
 ## To generate an Allure report in a single HTML page
 ### 1. You need to install Allure on your device
@@ -145,7 +145,7 @@ allure generate allure-results --clean --single-file
 ```
  for more details about **Allure Single HTML File** you can vist this [Link](https://allurereport.org/docs/gettingstarted-view-report/#open-a-single-html-file).
 
-### Download the Allure results [link](https://drive.google.com/file/d/1d7i_J1T232v3OlpKAl6LvB0ZGHHKV2f-/view?usp=sharing) to view the results
+### Download the Allure results [link](https://drive.google.com/file/d/15G4xvZtCQj-Hr6NvGdflqHRdokscbUE8/view?usp=sharing) to view the results
 ### Download the Javadoc results [link](https://drive.google.com/file/d/1veVSAUn1kBGzj7CWZF7XWNsc3ExSIASs/view?usp=sharing) to view the generated Javadoc.
       
 
