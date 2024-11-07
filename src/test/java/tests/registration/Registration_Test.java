@@ -39,7 +39,7 @@ public class Registration_Test extends Registration_Test_Base {
     /************************************************TEST_CASES********************************************************/
     @Owner("Nouran Ahmed")
     @Link(name = "Home_Register : Verify that the user can register successfully by entering valid data")
-    @Test(groups = {"Regression"})
+    @Test(groups = {"Regression","Smoke"})
     public void registration_With_Valid_Data() {
 
         ha = new Home_Actions(driver);
@@ -61,8 +61,8 @@ public class Registration_Test extends Registration_Test_Base {
     }
 
     @Owner("Nouran Ahmed")
-    @Link(name = "Home_Register : Verify that the user can not register by entering invalid data")
-    @Test
+    @Test( testName = "Home_Register : Verify that the user can not register by entering invalid data",
+            groups = "Smoke")
     public void registration_With_Invalid_Data() {
 
         ha = new Home_Actions(driver);
@@ -76,8 +76,8 @@ public class Registration_Test extends Registration_Test_Base {
     }
 
     @Owner("Nouran Ahmed")
-    @Link(name = "Home_Register: Verify that a validation message appears when the user enters a password that is less than 7 characters long.")
-    @Test
+    @Test(testName = "Home_Register: Verify that a validation message appears when the user enters a password that is less than 7 characters long."
+            ,groups = "Smoke")
     public void registration_With_Invalid_Password_Length() {
 
         ha = new Home_Actions(driver);

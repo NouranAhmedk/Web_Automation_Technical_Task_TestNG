@@ -40,4 +40,10 @@ public class Shoes_WebElements extends Page_Base {
     })
    List<WebElement> asc_Elements;
 
+    @FindBy(className = "price-box")
+    List<WebElement> before_Filter_Items_Price;
+
+
+    @FindBy(className = "price-box")
+    List<WebElement> after_Filter_Items_Price;
 }

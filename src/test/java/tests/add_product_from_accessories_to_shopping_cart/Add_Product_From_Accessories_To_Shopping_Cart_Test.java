@@ -31,7 +31,7 @@ public class Add_Product_From_Accessories_To_Shopping_Cart_Test extends Add_Prod
     /************************************************TEST_CASES********************************************************/
     @Owner("Nouran Ahmed")
     @Link(name = "Home_Login_Dashboard_Shoes_Card : Verify that the user can add a shoe product from the accessories to the shopping cart")
-    @Test(groups = {"Regression"})
+    @Test(groups = {"Regression","Smoke"})
     public void add_Product_From_Accessories_To_Shopping_Cart() {
 
         ha = new Home_Actions(driver);

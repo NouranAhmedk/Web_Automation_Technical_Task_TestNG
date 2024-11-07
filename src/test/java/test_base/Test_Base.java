@@ -20,7 +20,7 @@ public abstract class Test_Base {
     /***********************************************METHODS**************************************************/
 
     @Parameters({"browser"})
-    @BeforeMethod(groups = {"Regression"})
+    @BeforeMethod(groups = {"Regression","Smoke"})
     public void setUp_Environment()
     {
         switch (browser)
@@ -34,7 +34,7 @@ public abstract class Test_Base {
         driver.get(url);
     }
 
-    @AfterMethod(groups = {"Regression"})
+    @AfterMethod(groups = {"Regression","Smoke"})
     public void clearUp_Environment()
     {
         driver.quit();

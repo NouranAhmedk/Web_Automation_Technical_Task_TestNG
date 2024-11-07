@@ -1,6 +1,7 @@
     package web_pages;
 
     import lombok.SneakyThrows;
+    import org.checkerframework.checker.units.qual.C;
     import org.openqa.selenium.*;
     import org.openqa.selenium.interactions.Actions;
     import org.openqa.selenium.io.FileHandler;
@@ -11,6 +12,8 @@
 
     import java.io.File;
     import java.time.Duration;
+    import java.util.ArrayList;
+    import java.util.Collections;
     import java.util.List;
     import java.util.stream.Collectors;
 
@@ -205,6 +208,7 @@
         }
 
         /**
+         * {@code Deprecated}
          * <p>{@code assert_Ascending_Order_For_Items_C() } function</p>
          * <p> Streams here act as an iterator so it iterates in the list</p>
          * <p> Map: The main purpose of {@code map} is it takes something and makes it something else </p>
@@ -236,6 +240,7 @@
         }
 
         /**
+         * {@code Deprecated}
          * <p> {@code assert_Ascending_Order_For_Items_E() } function
          * in which it concerns about {@code currentValue} and {@code nextValue}
          * where we convert string, for example, "$20.0" to double and remove $ sign and trim any additional spaces 20.0
@@ -253,6 +258,55 @@
             }
             Assert.assertTrue(true, "All elements are in ascending order.");
         }
+
+        /**
+         * <p> {@code assert_Ascending_Order_For_Items() } function
+         * In this method,
+         * we will compare the values of items before applying the filter
+         * to determine if they are sorted in ascending order or not.
+         * */
+
+        protected void assert_Ascending_Order_For_Items(List<WebElement> ele1, List<WebElement> ele2 , String assertion_Message) {
+            List<Double> items_Before_Filter = new ArrayList<Double>();
+            List<Double> items_After_Filter = new ArrayList<Double>();
+
+            for(WebElement element: ele1){
+               items_Before_Filter.add(Double.parseDouble(element.getText().replace("$", "").trim()));
+            }
+
+            for(WebElement element: ele2){
+                items_After_Filter.add(Double.parseDouble(element.getText().replace("$", "").trim()));
+            }
+
+            Collections.sort(items_Before_Filter);
+            Assert.assertEquals(items_Before_Filter,items_After_Filter,assertion_Message);
+        }
+
+
+        /**
+         * <p> {@code assert_Ascending_Order_For_Items() } function
+         * In this method,
+         * we will compare the values of items before applying the filter
+         * to determine if they are sorted in descending order or not.
+         * */
+
+        protected void assert_Descending_Order_For_Items(List<WebElement> ele1, List<WebElement> ele2 , String assertion_Message) {
+            List<Double> items_Before_Filter = new ArrayList<Double>();
+            List<Double> items_After_Filter = new ArrayList<Double>();
+
+            for(WebElement element: ele1){
+                items_Before_Filter.add(Double.parseDouble(element.getText().replace("$", "").trim()));
+            }
+
+            for(WebElement element: ele2){
+                items_After_Filter.add(Double.parseDouble(element.getText().replace("$", "").trim()));
+            }
+
+            Collections.sort(items_Before_Filter);
+            Collections.reverse(items_Before_Filter);
+            Assert.assertEquals(items_Before_Filter,items_After_Filter,assertion_Message);
+        }
+
         /*****************************************SCREENSHOTS_INTERFACE***********************************************/
         /**
          * <p>This method is designed to capture a screenshot of the current state of a web page [Pass/Fail]

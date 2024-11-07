@@ -27,8 +27,6 @@ public class Shoes_Actions extends Shoes_WebElements {
 
     /******************************************ASSERTIONS*********************************************/
     public void assert_Ascending_Order_Price() {
-        assert_Ascending_Order_For_Items_E(asc_Elements, "Invalid Ascending order");
-//        assert_Ascending_Order_For_Items_C(asc_Elements, "Invalid Ascending order");
-
+        assert_Ascending_Order_For_Items(before_Filter_Items_Price,after_Filter_Items_Price,"Invalid Ascending order");
     }
 }

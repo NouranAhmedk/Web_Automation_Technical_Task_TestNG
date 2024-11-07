@@ -45,7 +45,7 @@ public class Complete_Flow_Test extends Complete_Flow_Test_Base {
     @Owner("Nouran Ahmed")
     @Link(name = "Home_Register_Login_Dashboard_Shoes_Card :  Verify that the user can register, then log out, and then log in." +
             "and add a shoe product from the accessories to the shopping cart")
-    @Test(groups = {"Regression"})
+    @Test(groups = {"Regression","Smoke"})
     public void validate_Complete_FLow() {
 
         ha = new Home_Actions(driver);

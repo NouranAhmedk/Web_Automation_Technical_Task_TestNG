@@ -30,7 +30,7 @@ public class Login_Test extends Login_Test_Base {
     /************************************************TEST_CASES********************************************************/
     @Owner("Nouran Ahmed")
     @Link(name = "Home_Login : Verify that the user can login by entering valid credentials")
-    @Test(groups ={"Regression"})
+    @Test(groups ={"Regression","Smoke"})
     public void login_With_Valid_Data() {
 
         ha = new Home_Actions(driver);
@@ -48,8 +48,7 @@ public class Login_Test extends Login_Test_Base {
     }
 
     @Owner("Nouran Ahmed")
-    @Link(name = "Home_Login : Verify that the user can not login by entering invalid credentials")
-    @Test
+    @Test(testName = "Home_Login : Verify that the user can not login by entering invalid credentials", groups = "Smoke")
     public void login_With_Invalid_Data() {
 
         ha = new Home_Actions(driver);
