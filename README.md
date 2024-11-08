@@ -147,5 +147,5 @@ allure generate allure-results --clean --single-file
 
 ### Download the Allure results [link](https://drive.google.com/file/d/15G4xvZtCQj-Hr6NvGdflqHRdokscbUE8/view?usp=sharing) to view the results
 ### Download the Javadoc results [link](https://drive.google.com/file/d/1veVSAUn1kBGzj7CWZF7XWNsc3ExSIASs/view?usp=sharing) to view the generated Javadoc.
-      
 
+![Web_Automation](https://github.com/user-attachments/assets/bf9b34b4-5e5b-4691-8027-266547d5ac42)
