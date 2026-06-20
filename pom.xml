@@ -77,8 +77,40 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar"
                     </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testNGSuite}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>regression</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>testSuite</name>
+                    <value>regression</value>
+                </property>
+            </activation>
+            <properties>
+                <testNGSuite>regression_testng.xml</testNGSuite>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>smoke</id>
+            <activation>
+                <property>
+                    <name>testSuite</name>
+                    <value>smoke</value>
+                </property>
+            </activation>
+            <properties>
+                <testNGSuite>smoke_testng.xml</testNGSuite>
+            </properties>
+        </profile>
+    </profiles>
 </project>
