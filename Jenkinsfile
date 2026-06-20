@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/NouranAhmedk/Web_Automation_Technical_Task_TestNG.git'
+                //git 'https://github.com/NouranAhmedk/Web_Automation_Technical_Task_TestNG.git'
 
                 // run only ONE — pick by OS
                 bat 'mvn test -P smoke'      // Windows
